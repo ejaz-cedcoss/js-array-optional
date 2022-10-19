@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product information Table</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+        <div id="form">
+            <h3>Add a product:</h3>
+            <label for="company">Company:</label><br>
+            <input type="text" name="company" id="usr_company"><br>
+
+            <label for="Model:">Model:</label><br>
+            <input type="text" name="model" id="usr_model"><br>
+
+            <label for="memory">Memory:</label><br>
+            <input type="text" name="memory" id="usr_memory"><br>
+
+            <label for="price">Price:</label><br>
+            <input type="text" name="price" id="usr_price"><br>
+
+            <label for="quantity">Quantity:</label><br>
+            <input type="text" name="quantity" id="usr_quantity"><br>
+
+            <button id="addBtn" onclick="add()"><b>ADD</b></button>
+        </div>
+        <div id="firstDiv"> 
+            <h3>Display Table:</h3>
+            <table id="prod_Table">
+                <thead>
+                    <th><b>Company</b></th>
+                    <th><b>Model</b></th>
+                    <th><b>Memory (GB)</b></th>
+                    <th><B>Price (Rs.)</B></th>
+                    <th><b>Rating</b></th>
+                    <th><b>Quantity</b></th>
+                    <th><b>Action</b></th>
+                </thead>
+                <tbody>
+
+                </tbody>
+                <tfoot>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button id="deleteBtn" onclick="deleteRow()">Delete</button></td>
+                </tfoot>
+            </table>
+        </div>
+        <br>
+        <div id="container">
+            <div style="padding-bottom: 15px;">
+
+                <h3>Search any product through the table:</h3>
+                <select name="dropdown" id="dropdown" >
+                    <option disabled selected>-Select Field-</option>
+                    <option value="company">Company</option>
+                    <option value="model">Model</option>
+                    <option value="memory">Memory</option>
+                    <option value="price">Price</option>
+
+                </select>
+
+                <input type="search" name="searchBar" id="search" placeholder="Enter the field"/>
+
+                <button id="searchBtn" onclick="search()"><b>Search</b></button> <br><br>
+            </div>
+                <!-- <div>
+                    <table id="prod_Table">
+                        <th><b>Company</b></th>
+                        <th><b>Model</b></th>
+                        <th><b>Memory (GB)</b></th>
+                        <th><B>Price (Rs.)</B></th>
+                    </table>
+                </div> -->
+            <hr>    
+            <div id="sort">
+                <h3>Sort the table:</h3>
+                <select name="sort1" id="sort1">
+                    <option value="-1" selected >-Sort-</option>
+                    <option value="ascending">Ascending</option>
+                    <option value="descending">Descending</option>
+                </select>
+
+                <select name="sort2" id="sort2" onchange="sort()">
+                    <option value="-1" selected >-Sort By-</option>
+                    <option value="company">Company</option>
+                    <option value="model">Model</option>
+                    <option value="memory">Memory</option>
+                    <option value="price">Price</option>
+                </select>
+            </div>
+            <hr> 
+        </div>   
+        <div id="rating">
+
+            <h3>Change rating:</h3>
+
+            <select id="rate_select">
+                <option value= '-1' class="first" selected disabled>-Select Product-</option>
+
+            </select>
+
+            <select id="giveRate">
+                <option value= '-1' class="first" selected disabled>-Select Rating-</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+
+            </select>
+
+            <button id="rate" onclick="rating()"><b>Rate</b></button>
+
+        </div>
+        <hr>
+
+        <div id="bill_generation">
+
+            <h3>Add product to your cart and generate the bill: </h3>
+
+            <select id="select_prod">
+
+                <option value= '-1' class="first" selected disabled>-Select Product-</option>
+            </select>
+
+            <input type="text" id="quantity" placeholder="quantity.." />
+
+            <button id="add_quan" onclick="addQuantity()"><b>ADD</b></button>
+            <button id="generate_bill" onclick="generateBill()"><b>Generate Bill</b></button>
+
+            <div id="bill">
+                <h3>Bill</h3>
+                <table id="bill_table">
+                    <tr>
+                        <th>Description</th>
+                        <th>Quantity</th>
+                        <th>Amount</th>
+                    </tr>
+                    <tfoot>
+
+                    </tfoot>
+
+                </table>
+
+            </div>
+
+        </div>
+        <hr>        
+        <div id="inventory">
+
+            <h3>Inventory Management:</h3>
+            <select id="select_dd">
+                <option value= '-1' class="first" selected disabled>-Select Product-</option>
+
+            </select>
+
+            <input type="text" id="inventory-quan" placeholder="quantity.." />
+
+            <button id="update-btn" onclick="update()"><b>UPDATE</b></button>
+
+        </div>
+        <hr>
+
+        <div id="max-min">
+
+            <h3>Search according to the price:                                                                                                                                                                                                                                      </h3>
+            <input type="text" id="min" placeholder="Minimum price" />
+
+            <input type="text" id="max" placeholder="Maximum price" />
+
+            <button id="max-min-search" onclick="maxMin()"><b>Search</b></button>
+        </div>
+    </center>
+    <script src="script.js"></script>
+</body>
+</html>

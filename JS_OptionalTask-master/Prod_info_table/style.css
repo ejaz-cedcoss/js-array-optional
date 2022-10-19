@@ -1,0 +1,39 @@
+table {
+    width: 800px;
+    text-align: center;
+    border: 0.1px solid rgb(216, 216, 216);
+    border-collapse: collapse;
+}
+.col, th {
+    border-bottom: 1px solid rgb(204, 204, 204);
+    padding: 8px;
+}
+#searchBtn, select, #search, #inventory-quan,#max,#min, #quantity,button {
+    padding: 5px 10px;
+    margin: 15px 0;
+}
+#form {
+    float: left;
+    text-align: left;
+}
+
+#giveRate{
+    text-align: center;
+}
+
+    /* #rating {
+        margin-bottom: 54px ;
+    } */
+
+/* #container{ 
+    float: left;
+} */
+#form::after, #container::after {
+    float: clear;
+}
+label{
+    margin-bottom: 10px;
+}
+#sort {
+    margin-bottom: 10px;
+}
